@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+
+    <item
+        android:id="@+id/lang"
+        android:title="@string/change_language"
+        app:showAsAction="never"
+        android:icon="@drawable/lang"
+    />
+    <item
+        android:id="@+id/faqs"
+        android:title="@string/faqs"
+        app:showAsAction="never"
+        android:icon="@drawable/faqs"
+        />
+    <item
+        android:id="@+id/care"
+        android:title="@string/customer_care"
+        app:showAsAction="never"
+        android:icon="@drawable/customer_car"
+        />
+    <item
+        android:id="@+id/about"
+        android:title="@string/about"
+        app:showAsAction="never"
+        android:icon="@drawable/info"
+        />
+
+
+    <item
+        android:id="@+id/logout"
+        android:title="@string/log_out"
+        app:showAsAction="never"
+        android:icon="@drawable/log_out"
+        />
+</menu>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.alatheer.menu.activities.CountryLanguageActivity"
+    >
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+    </android.support.v4.view.ViewPager>
+
+
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/chef"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginBottom="30dp"
+
+
+
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expand_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:el_duration="1000"
+                        app:el_parallax=".5"
+                        app:el_expanded="false"
+                        android:background="@color/transparent"
+                        android:layout_gravity="center_horizontal"
+
+                        >
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="2dp"
+                            android:background="@color/transparent"
+                            >
+                        </android.support.v7.widget.RecyclerView>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/gray2"
+                        android:layout_marginBottom="3dp"
+                        android:visibility="invisible"
+                        />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/transparent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+
+
+                    >
+
+                    <ProgressBar
+                        android:id="@+id/progBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:clickable="false"
+                        android:indeterminateTint="@color/colorPrimary"
+                        android:longClickable="false"
+                        android:visibility="gone" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:clickable="false"
+                            android:descendantFocusability="blocksDescendants"
+                            android:gravity="center_vertical"
+                            android:longClickable="false"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            >
+
+                            <ImageView
+                                android:id="@+id/image_flag"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:clickable="false"
+                                android:longClickable="false"
+                                android:src="@drawable/flag" />
+
+                            <TextView
+                                android:id="@+id/tv_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="60dp"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginRight="60dp"
+                                android:layout_marginStart="12dp"
+                                android:clickable="false"
+                                android:longClickable="false"
+                                android:text="الكويت"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/image_state"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:clickable="false"
+                                android:longClickable="false"
+                                android:src="@drawable/arrowcircle" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layoutDirection="ltr"
+                >
+                <Button
+                    android:id="@+id/btn_en"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+
+                    android:background="@drawable/lang_btn_bg"
+
+                    android:textColor="@color/white"
+                    android:text="English"
+                    android:textSize="17sp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:letterSpacing=".1"
+
+                    />
+                <Button
+                    android:id="@+id/btn_ar"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+
+                    android:background="@drawable/lang_btn_bg"
+
+                    android:textColor="@color/white"
+                    android:text="عربي"
+                    android:textSize="17sp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+       
+        
+    </RelativeLayout>
+
+</FrameLayout>

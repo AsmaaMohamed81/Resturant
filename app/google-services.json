@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "744644722556",
+    "firebase_url": "https://menuoo.firebaseio.com",
+    "project_id": "menuoo",
+    "storage_bucket": "menuoo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744644722556:android:fc54761d78ad89e6",
+        "android_client_info": {
+          "package_name": "com.alatheer.menu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744644722556-7let5e7mksf6nqd1g1vil7lcb1va03hl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJu5UEmNBclBd6_2vfM0IS4lXZr0__EFM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

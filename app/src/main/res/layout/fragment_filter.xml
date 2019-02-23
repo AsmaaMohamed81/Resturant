@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <android.support.v7.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cardBackgroundColor="@color/white"
+       app:contentPadding="8dp"
+       >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:background="@color/gray1"
+           >
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:textColor="@color/black"
+               android:gravity="center_vertical"
+               android:textStyle="bold"
+               android:text="@string/filter_type"
+               android:paddingRight="8dp"
+               android:paddingLeft="8dp"
+               android:background="@color/white"
+               android:textSize="15sp"
+               />
+           <AutoCompleteTextView
+               android:layout_width="match_parent"
+               android:layout_height="45dp"
+               android:background="@color/white"
+               android:layout_marginTop="2dp"
+               android:singleLine="true"
+               android:paddingLeft="35dp"
+               android:paddingRight="35dp"
+               android:gravity="center_vertical"
+               android:hint="@string/search_filters"
+               android:textColorHint="#9e9e9e"
+               android:textSize="15sp"
+
+               />
+
+
+       </LinearLayout>
+   </android.support.v7.widget.CardView>
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/expand_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:el_duration="1200"
+        app:el_expanded="false"
+        app:el_parallax=".5"
+        android:background="@color/white"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recViewFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+
+            >
+
+        </android.support.v7.widget.RecyclerView>
+    </net.cachapa.expandablelayout.ExpandableLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_above="@id/apply_btn"
+            android:layout_marginBottom="5dp"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/apply_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_login_bg"
+            android:textSize="20sp"
+            android:text="@string/apply_filter"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:letterSpacing="0.1"
+
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

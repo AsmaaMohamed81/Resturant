@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="map_api">AIzaSyBfL8E89HdeMD6E2fvR76i_kD10wiTIKIc</string>
+    <string name="app_name">منيوو</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">فتح</string>
+    <string name="navigation_drawer_close">إغلاق</string>
+    <string name="login_create">تسجيل الدخول/إنشاء حساب</string>
+    <string name="change">تغيير</string>
+    <string name="help_support">المساعدة والدعم</string>
+    <string name="change_language">تغيير اللغة</string>
+    <string name="faqs">الأسئلة الشائعة</string>
+    <string name="customer_care">خدمة العملاء</string>
+    <string name="about">عن التطبيق</string>
+    <string name="search_resturants">إبحث في المطاعم</string>
+    <string name="choose_lang">إختيار اللغة</string>
+    <string name="choose_contact_options">إختر طريقة التواصل</string>
+    <string name="live_chat">محادثة مباشرة</string>
+    <string name="search_filters">إبحث</string>
+    <string name="filter_type">تصفية على حسب النوع</string>
+
+    <string name="login">تسجيل الدخول</string>
+    <string name="forget_pass">هل نسيت كلمه السر؟</string>
+    <string name="areyounew">هل انت جديد لمطعمنا؟\u0020</string>
+    <string name="regist_now">قم بالتسجيل الان!</string>
+    <string name="email">البريدالإلكتروني *</string>
+    <string name="Password">كلمه السر</string>
+    <string name="register_txt">تسجيل الدخول</string>
+    <string name="apply_filter">تطبيق التصفية</string>
+    <string name="new_acount">انشاء حساب</string>
+    <string name="first_name">الاسم الأول</string>
+    <string name="phone">(+ مفتاح الدولة) رقم الجوال</string>
+    <string name="text1_register">عند انشائك للحساب فإنك تتفق مع</string>
+    <string name="text2_register">الشروط والاحكام</string>
+    <string name="name">الاسم *</string>
+    <string name="message">الرسالة *</string>
+    <string name="creat_acount">إنشاء حساب</string>
+    <string name="name_req">الاسم مطلوب</string>
+    <string name="email_req">البريدالالكتروني مطلوب</string>
+    <string name="phone_req">رقم الجوال مطلوب</string>
+    <string name="msg_req">الرسالة مطلوبة</string>
+    <string name="email_inv">البريدالالكتروني غير صحيح</string>
+    <string name="phone_inv">رقم الجوال غير صحيح</string>
+    <string name="about_yummy">عن التطبيق</string>
+    <string name="terms_amp_conditions">الشروط والا حكام</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="rule">الشروط والاحكام</string>
+    <string name="priv_pol">سياسة البيانات</string>
+    <string name="connecting_to_agent">يتم الاتصال بموظف خدمة العملاء</string>
+    <string name="faq">الاسئلة الشائعة</string>
+    <string name="pass_req">كلمة المرور مطلوبة</string>
+    <string name="pass_is_short">كلمة المرور قصيرة (حد أدنى 8 أحرف)</string>
+    <string name="wait">برجاء الانتظار...</string>
+    <string name="error">خطأ</string>
+    <string name="inv_cred">بيانات الدخول خاطئة</string>
+    <string name="ok_txt">موافق</string>
+    <string name="title1">حصريا\nلدينا،\nأفضل المطاعم</string>
+    <string name="title2">تتبع طلبك\nعلى\nالخريطة،\nمباشرة</string>
+    <string name="title3">اسرع خدمة\nتوصيل،\nلباب بيتك</string>
+    <string name="select_your_area">اختر منطقتك</string>
+    <string name="deliver_to_a_different_location">التوصيل إلى                                                                                                                                عنوان مختلف</string>
+    <string name="find_restaurant">ابحث عن مطاعم</string>
+    <string name="choose_your_location">اختر الموقع</string>
+    <string name="select_area">اختر منطقتك</string>
+    <string name="delivered_to_different_location">التوصيل الى عنوان مختلف</string>
+    <string name="search_area">ابحث باسم المنطقة</string>
+    <string name="deliver_to_my_current_location">توصيل إلى عنواني الحالي</string>
+    <string name="deliver_elsewhere">التوصيل إلى مكان آخر</string>
+    <string name="sel_del_loc">إختيار العنوان</string>
+    <string name="search_or_move_the_map">ابحث او حرك الخريطة</string>
+    <string name="confirm_address">تأكيد العنوان</string>
+    <string name="inter">تحقق من الاتصال بالانترنت</string>
+    <string name="load_loc">تحميل العنوان...</string>
+    <string name="item_name">إسم العنصر</string>
+    <string name="department">القسم</string>
+    <string name="food_type">نوع الاكل</string>
+    <string name="amount">الكمية</string>
+    <string name="price">السعر</string>
+    <string name="after_discount">السعر بعد الخصم</string>
+    <string name="optional">إختياري</string>
+    <string name="exstra">إضافات</string>
+    <string name="notes">ملاحظات</string>
+    <string name="add_item">إضافة عنصر</string>
+    <string name="add">إضافة</string>
+    <string name="price_befor_discount">السعر قبل الخصم</string>
+    <string name="pieces">قطعة</string>
+    <string name="boxes">بوكس</string>
+    <string name="meal_name">إسم الوجبة</string>
+    <string name="meal_details">تفاصيل الوجبة</string>
+    <string name="add_meal">إضافة وجبة</string>
+    <string name="d_name">إسم المشروب</string>
+    <string name="ingredients">مكونات الوجبة</string>
+    <string name="drinks">المشروبات</string>
+    <string name="add_drink">إضافة مشروب</string>
+    <string name="add_foods">إضافة أكلات</string>
+    <string name="add_meals">إضافة وجبات</string>
+    <string name="add_drinks">إضافة مشروبات</string>
+    <string name="details">التفاصيل</string>
+    <string name="exist_meal">وجبة جاهزة</string>
+    <string name="create_meal">إنشاء وجبة</string>
+    <string name="restaurants">المطاعم</string>
+    <string name="chefs">الاكل البيتي</string>
+    <string name="nots">الإشعارات</string>
+    <string name="daily_report">تقرير يومي</string>
+    <string name="weekly_report">تقرير إسبوعي</string>
+    <string name="monthly_report">تقرير شهري</string>
+    <string name="annual_report">تقرير سنوي</string>
+    <string name="log_out">تسجيل الخروج</string>
+    <string name="chef_search">إبحث عن شيف</string>
+    <string name="something">Error : something went haywire try again later</string>
+    <string name="em_ph_exist">Email or phone number are exist</string>
+
+    <string-array name="details">
+        <item>العروض</item>
+        <item>القائمه</item>
+        <item>الاكثر مبيعا</item>
+    </string-array>
+    <string-array name="discount">
+        <item>إختر</item>
+        <item>خصم</item>
+        <item>بدون خصم</item>
+
+    </string-array>
+
+    <string-array name="drink_type">
+        <item>إختر</item>
+        <item>مشروبات ساخنة</item>
+        <item>مشروبات باردة</item>
+
+    </string-array>
+    <string-array name="amount">
+        <item>إختر</item>
+        <item>لا شئ</item>
+        <item>قطعة</item>
+        <item>بوكس</item>
+        <item>كيلو</item>
+
+    </string-array>
+
+    <string name="chk_user_pas">Check username or password</string>
+    <string name="No_offer">لايوجد عروض الان</string>
+    <string name="info">مثال : حساسيه , الصلصه علي الجنب , بدون بصل , الخ . \الرجاء ان تكون واضح ودقيق حتي نتمكن من تنفيذ طلبك علي أكمل وجه !</string>
+    <string name="No_menu">لايوجد قائمه طعام</string>
+    <string name="No_sales">لايوجد منتجات اكثر مبيعا لهذا المطعم</string>
+    <string name="No_chif">لايوجد شيفات الان</string>
+    <string name="No_home">لا يوجد مطاعم الان</string>
+    <string name="add_to_card">أضف الي السلة</string>
+    <string name="add_city">أدخل المدينه</string>
+    <string name="add_govern">أدخل المحافظه</string>
+    <string name="continuee">continue</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="address">Address</string>
+    <string name="address_add">اضف عنوانك بالتفصيل</string>
+    <string name="empty_cart">Empty Cart</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="the_cart_contains">The cart contains</string>
+    <string name="item">item</string>
+    <string name="delete_items">delete items</string>
+    <string name="failed">Failed</string>
+    <string name="address_req">يجب اضافه عنوانك اولا</string>
+    <string name="notifications">Notifications</string>
+    <string name="si_su">Please Sign in or sign up .</string>
+    <string name="products_cost">Products Cost</string>
+    <string name="discount">DisCount</string>
+    <string name="total">Total</string>
+    <string name="search">ابحث</string>
+
+</resources>

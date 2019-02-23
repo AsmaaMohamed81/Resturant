@@ -1,0 +1,171 @@
+<resources>
+    <string name="map_api">AIzaSyBfL8E89HdeMD6E2fvR76i_kD10wiTIKIc</string>
+    <string name="app_name">Menu</string>
+
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="login_create">Log in / Create account</string>
+    <string name="change">Change</string>
+    <string name="help_support">HELP AND SUPPORT</string>
+    <string name="change_language">Change Language</string>
+    <string name="faqs">FAQs</string>
+    <string name="customer_care">Customer care</string>
+    <string name="about">About</string>
+    <string name="search_resturants">Search restaurants</string>
+    <string name="choose_lang">CHOOSE LANGUAGE</string>
+    <string name="choose_contact_options">CHOOSE CONTACT OPTIONS</string>
+    <string name="live_chat">Live Chat</string>
+    <string name="search_filters">Search filters</string>
+    <string name="filter_type">FILTER BY TYPES OF CUISINE</string>
+
+    <string name="login">Log in</string>
+    <string name="forget_pass">Forgot Password ?</string>
+    <string name="areyounew">Don\'t have an account?\u0020</string>
+    <string name="regist_now">Sign Up.</string>
+    <string name="email">Email Address</string>
+    <string name="Password">Password</string>
+    <string name="register_txt">Sign in</string>
+    <string name="apply_filter">Apply Filter</string>
+    <string name="new_acount">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="phone">(+ country key) phone number</string>
+    <string name="text1_register">By creating your account , you agree with our </string>
+    <string name="text2_register">Terms &amp; Conditions</string>
+    <string name="name">Name *</string>
+    <string name="message">Message *</string>
+    <string name="creat_acount">Create Account</string>
+    <string name="name_req">Name is required</string>
+    <string name="email_req">Email is required</string>
+    <string name="phone_req">Phone number is required</string>
+    <string name="msg_req">Message is required</string>
+    <string name="email_inv">Please enter a valid email address</string>
+    <string name="phone_inv">Please enter a valid phone number</string>
+    <string name="about_yummy">About Yummy</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="rule">TERMS &amp; CONDITIONS</string>
+    <string name="priv_pol">PRIVACY POLICY</string>
+    <string name="connecting_to_agent">connecting to agent</string>
+    <string name="faq">FAQs</string>
+    <string name="pass_req">Password is required</string>
+    <string name="pass_is_short">Password is to short (minimum 8 characters)</string>
+    <string name="wait">Please wait...</string>
+    <string name="error">Error</string>
+    <string name="inv_cred">Invalid Credentials</string>
+    <string name="ok_txt">Ok</string>
+    <string name="title1">Your\nfavourite\nfood,\n\delivered by us.</string>
+    <string name="title2">Live\ntracking,\nin real_time.</string>
+    <string name="title3">Delivered\nfaster,\nto your door.</string>
+    <string name="select_your_area">Select Your Area</string>
+    <string name="deliver_to_a_different_location">Deliver to a different location</string>
+    <string name="find_restaurant">find restaurant</string>
+    <string name="choose_your_location">Choose your   location</string>
+    <string name="select_area">select you area</string>
+    <string name="delivered_to_different_location">deliver to different location</string>
+    <string name="search_area">Search area</string>
+    <string name="deliver_to_my_current_location">deliver to my current location</string>
+    <string name="deliver_elsewhere">deliver elsewhere</string>
+    <string name="sel_del_loc">Select delivery location</string>
+    <string name="search_or_move_the_map">Search or move the map</string>
+    <string name="confirm_address">Confirm address</string>
+    <string name="inter">Check internet connection</string>
+    <string name="load_loc">Fetching location...</string>
+    <string name="item_name">item name</string>
+    <string name="department">Department</string>
+    <string name="food_type">food type</string>
+    <string name="amount">amount</string>
+    <string name="price">price</string>
+    <string name="after_discount">after discount</string>
+    <string name="optional">optional</string>
+    <string name="exstra">exstra</string>
+    <string name="notes">Notes</string>
+    <string name="add_item">add item</string>
+    <string name="add">add</string>
+    <string name="price_befor_discount">before discount</string>
+    <string name="pieces">Pieces</string>
+    <string name="boxes">boxes</string>
+    <string name="meal_name">Meal name</string>
+    <string name="meal_details">Meal details</string>
+    <string name="add_meal">Add meal</string>
+    <string name="d_name">Name</string>
+    <string name="ingredients">ingredients</string>
+    <string name="drinks">Drinks</string>
+    <string name="add_drink">add drink</string>
+    <string name="add_foods">Add foods</string>
+    <string name="add_meals">Add meals</string>
+    <string name="add_drinks">Add drinks</string>
+    <string name="details">Details</string>
+    <string name="exist_meal">Exists meal</string>
+    <string name="create_meal">Create meal</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="chefs">Chef</string>
+    <string name="nots">Notifications</string>
+    <string name="daily_report">DAILY REPORT</string>
+    <string name="weekly_report">WEEKLY REPORT</string>
+    <string name="monthly_report">MONTHLY REPORT</string>
+    <string name="annual_report">ANNUAL REPORT</string>
+    <string name="log_out">LOG OUT</string>
+    <string name="chef_search">Search chefs</string>
+    <string name="something">Error : something went haywire try again later</string>
+    <string name="em_ph_exist">Email or phone number are exist</string>
+
+    <string-array name="details">
+        <item>Offers</item>
+        <item>Menu</item>
+        <item>Most Selling</item>
+    </string-array>
+    <string-array name="discount">
+        <item>Choose</item>
+        <item>Discount</item>
+        <item>No Discount</item>
+
+    </string-array>
+
+
+    <string-array name="drink_type">
+        <item>Choose</item>
+        <item>Hot Drinks</item>
+        <item>Cold Drinks</item>
+
+    </string-array>
+
+    <string-array name="amount">
+        <item>Choose</item>
+        <item>none</item>
+        <item>Piece</item>
+        <item>box</item>
+        <item>kilo</item>
+
+    </string-array>
+
+    <string name="chk_user_pas">Check username or password</string>
+    <string name="No_offer">لايوجد عروض الان</string>
+    <string name="info">مثال : حساسيه , الصلصه علي الجنب , بدون بصل , الخ . \الرجاء ان تكون واضح ودقيق حتي نتمكن من تنفيذ طلبك علي أكمل وجه !</string>
+    <string name="No_menu">لايوجد قائمه طعام لهذا المطعم</string>
+    <string name="No_sales">لايوجد منتجات اكثر مبيعا لهذا المطعم</string>
+    <string name="No_chif">لايوجد شيفات الان</string>
+    <string name="No_home">لا يوجد مطاعم الان</string>
+    <string name="add_to_card">أضف الي السلة</string>
+    <string name="add_city">Add City</string>
+    <string name="add_govern">Add Govern</string>
+    <string name="continuee">continue</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="address">Address</string>
+    <string name="address_add">اضف عنوانك بالتفصيل</string>
+    <string name="empty_cart">Empty Cart</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="the_cart_contains">The cart contains</string>
+    <string name="item">item</string>
+    <string name="delete_items">delete items</string>
+    <string name="failed">Failed</string>
+    <string name="address_req">يجب اضافه عنوانك اولا</string>
+    <string name="notifications">Notifications</string>
+    <string name="si_su">Please Sign in or sign up .</string>
+    <string name="products_cost">Products Cost</string>
+    <string name="discount">DisCount</string>
+    <string name="total">Total</string>
+    <string name="search">ابحث</string>
+</resources>

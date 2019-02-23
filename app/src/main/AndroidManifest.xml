@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.alatheer.menu">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name="com.alatheer.menu.remote.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo_lunch"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo_lunch"
+        android:supportsRtl="true"
+        android:hasCode="true"
+        tools:replace="android:hasCode"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.alatheer.menu.activities.Personal_Info_Activity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_api" /> <!-- <activity android:name=".activities.SplashActivity"> -->
+        <!-- //launcher -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity android:name="com.alatheer.menu.activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".activities.FcmMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <activity
+            android:name="com.alatheer.menu.activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.alatheer.menu.activities.LoginActivity"
+            android:theme="@style/AppTheme3"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.alatheer.menu.activities.RegisterActivity"
+            android:theme="@style/AppTheme3"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.alatheer.menu.activities.Contact_usActivity"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alatheer.menu.activities.AboutActivity" />
+        <activity android:name="com.alatheer.menu.activities.AboutDetailsActivity" />
+        <activity android:name="com.alatheer.menu.activities.TermsConditionActivity" />
+        <activity android:name="com.alatheer.menu.activities.PrivacyPolicyActivity" />
+        <activity android:name="com.alatheer.menu.activities.FAQsActivity" />
+        <activity android:name="com.alatheer.menu.activities.CountryLanguageActivity" />
+        <activity android:name="com.alatheer.menu.activities.ChooseLocationActivityold" />
+        <activity
+            android:name="com.alatheer.menu.activities.LocationSearchActivity"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.alatheer.menu.activities.MapActivity"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <service android:name="com.alatheer.menu.service.LocationService" />
+
+        <activity
+            android:name="com.alatheer.menu.activities.AddItemActivity"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.alatheer.menu.activities.AdminActivity"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alatheer.menu.activities.AdminReportsActivity" />
+        <activity android:name="com.alatheer.menu.activities.HelpActivity" />
+        <activity android:name="com.alatheer.menu.activities.RestaurantMainMenuActivity" />
+        <activity android:name="com.alatheer.menu.activities.RestaurantMenuActivity" />
+        <activity android:name="com.alatheer.menu.activities.DetailsFoodActivity" />
+        <activity android:name="com.alatheer.menu.activities.Cart_activity" />
+        <activity android:name="com.alatheer.menu.activities.ChooseLocationActivity" />
+    </application>
+
+</manifest>
