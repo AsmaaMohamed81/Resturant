@@ -1,5 +1,6 @@
 package com.alatheer.menu.fagments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,16 +13,23 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.alatheer.menu.R;
 import com.alatheer.menu.activities.HomeActivity;
 import com.alatheer.menu.adapters.FilterAdapter;
+import com.alatheer.menu.languagehelper.LanguageHelper;
 import com.alatheer.menu.models.Filter_Model;
+import com.alatheer.menu.tags.Tags;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.paperdb.Paper;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
 /**
@@ -39,6 +47,26 @@ public class Fragment_Filter extends Fragment {
     private HomeActivity homeActivity;
     int i=0;
 
+    @Override
+    public void onAttach(Context context) {
+
+        Paper.init(context);
+        String lang = Paper.book().read("language");
+
+        if (Paper.book().read("language").equals("ar")) {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.AR_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+
+        } else {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.EN_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+        }
+        super.onAttach(CalligraphyContextWrapper.wrap(LanguageHelper.onAttach(context, lang)));
+    }
 
 
     @Nullable
@@ -98,13 +126,15 @@ public class Fragment_Filter extends Fragment {
 
     }
     private void AddItem() {
+
+        Toast.makeText(homeActivity, "سوف نقوم بالعمل عليها ف اقرب وقت ", Toast.LENGTH_SHORT).show();
         if (!expand_layout.isExpanded())
         {
             expand_layout.setExpanded(true,true);
 
         }
         i++;
-        filter_modelList.add(new Filter_Model("Emad"+i));
+        filter_modelList.add(new Filter_Model("Data"+i));
         adapter.notifyItemInserted(filter_modelList.size()-1);
         manager.scrollToPosition(filter_modelList.size()-1);
 

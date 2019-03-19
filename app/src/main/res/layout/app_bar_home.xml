@@ -152,11 +152,11 @@
 
             </LinearLayout>
 
-        <Button
-            android:id="@+id/fake"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Notification"/>
+        <!--<Button-->
+            <!--android:id="@+id/fake"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Notification"/>-->
 
 
         </android.support.design.widget.AppBarLayout>

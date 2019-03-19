@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Restaurantdata {
 
+    private int success;
     private ArrayList<RestaurantsModel> restaurants;
     private ArrayList<RestaurantsModel> chifes;
 
@@ -22,5 +23,9 @@ public class Restaurantdata {
 
     public void setChifes(ArrayList<RestaurantsModel> chifes) {
         this.chifes = chifes;
+    }
+
+    public int getSuccess() {
+        return success;
     }
 }

@@ -2,6 +2,7 @@ package com.alatheer.menu.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,6 +11,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -43,6 +47,10 @@ import io.paperdb.Paper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -99,6 +107,11 @@ public class CountryLanguageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_language);
+
+        if (isFirstTime()) {
+            ShowIntro("قائمه الدول", Html.fromHtml("<font color='red'> اضغط لكي تختار دولتك اولا </p>"), R.id.container, 1);
+        }
+
         initView();
     }
 
@@ -206,12 +219,16 @@ public class CountryLanguageActivity extends AppCompatActivity {
                 Paper.book().write("language", "ar");
 
 
+                if (CountryModel==null){
+
+                    Toast.makeText(CountryLanguageActivity.this, "اختار دولتك اولاااا", Toast.LENGTH_SHORT).show();
+                }else {
                 preferences.UpdateChooseLang(CountryLanguageActivity.this, true);
                 countries.setCountrydata(CountryModel);
 
 
                 LanguageHelper.setLocality(CountryLanguageActivity.this, Paper.book().read("language"));
-                refreshLayout();
+                refreshLayout();}
 
             }
         });
@@ -222,13 +239,16 @@ public class CountryLanguageActivity extends AppCompatActivity {
                 Paper.book().write("language", "en");
 
 
-                preferences.UpdateChooseLang(CountryLanguageActivity.this, true);
-                countries.setCountrydata(CountryModel);
+                if (CountryModel==null){
+
+                    Toast.makeText(CountryLanguageActivity.this, "اختار دولتك اولاااا", Toast.LENGTH_SHORT).show();
+                }else {
+                    preferences.UpdateChooseLang(CountryLanguageActivity.this, true);
+                    countries.setCountrydata(CountryModel);
 
 
-                LanguageHelper.setLocality(CountryLanguageActivity.this, Paper.book().read("language"));
-                refreshLayout();
-
+                    LanguageHelper.setLocality(CountryLanguageActivity.this, Paper.book().read("language"));
+                    refreshLayout();}
             }
         });
     }
@@ -312,6 +332,35 @@ public class CountryLanguageActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+
+    private void ShowIntro(String title, Spanned text, int viewId, final int type) {
+
+        new GuideView.Builder(this)
+                .setTitle(title)
+                .setTargetView(findViewById(viewId))
+                .setContentTextSize(15)//optional
+                .setTitleTextSize(20)//optional
+                .setContentSpan((Spannable) text)
+                .setGravity(Gravity.center)
+                .setIndicatorHeight(30)
+                .setDismissType(DismissType.anywhere) //optional - default dismissible by TargetView
+
+                .build()
+                .show();
+    }
+
+    private boolean isFirstTime() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        boolean ranBefore = preferences.getBoolean("RanBefore", false);
+        if (!ranBefore) {
+            // first time
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("RanBefore", true);
+            editor.commit();
+        }
+        return !ranBefore;
     }
 
     @Override

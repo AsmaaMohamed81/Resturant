@@ -14,8 +14,8 @@ android {
         applicationId "com.alatheer.menu"
         minSdkVersion 17
         targetSdkVersion 27
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -95,6 +95,11 @@ dependencies {
     implementation 'com.aurelhubert:ahbottomnavigation:2.1.0'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.github.mreram:showcaseview:1.1'
+
+    implementation 'com.romainpiel.shimmer:library:1.4.0@aar'
+
+
 }
 
 apply plugin: 'com.google.gms.google-services'

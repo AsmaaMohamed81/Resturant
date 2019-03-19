@@ -21,6 +21,15 @@ public class RestaurantsModel {
     private String rest_approved;
     private String readed;
     private String type;
+    private String rest_work_time;
+
+    public String getRest_work_time() {
+        return rest_work_time;
+    }
+
+    public void setRest_work_time(String rest_work_time) {
+        this.rest_work_time = rest_work_time;
+    }
 
     public String getType() {
         return type;

@@ -141,19 +141,20 @@
     </string-array>
 
     <string name="chk_user_pas">Check username or password</string>
-    <string name="No_offer">لايوجد عروض الان</string>
-    <string name="info">مثال : حساسيه , الصلصه علي الجنب , بدون بصل , الخ . \الرجاء ان تكون واضح ودقيق حتي نتمكن من تنفيذ طلبك علي أكمل وجه !</string>
-    <string name="No_menu">لايوجد قائمه طعام لهذا المطعم</string>
-    <string name="No_sales">لايوجد منتجات اكثر مبيعا لهذا المطعم</string>
-    <string name="No_chif">لايوجد شيفات الان</string>
-    <string name="No_home">لا يوجد مطاعم الان</string>
-    <string name="add_to_card">أضف الي السلة</string>
+    <string name="No_offer">No Offer Now</string>
+    <string name="info">
+Example: allergies, silence on the side, without onions, etc. \ Please be clear and accurate so that we can implement your request to the fullest!</string>
+    <string name="No_menu">No Menu In This Restaurant Now </string>
+    <string name="No_sales">No Sales In This Restaurant Now</string>
+    <string name="No_chif">No Chiefs Now</string>
+    <string name="No_home">No Restaurant Now</string>
+    <string name="add_to_card">Add To Card</string>
     <string name="add_city">Add City</string>
     <string name="add_govern">Add Govern</string>
     <string name="continuee">continue</string>
     <string name="personal_information">Personal Information</string>
     <string name="address">Address</string>
-    <string name="address_add">اضف عنوانك بالتفصيل</string>
+    <string name="address_add">Add Details Your Address </string>
     <string name="empty_cart">Empty Cart</string>
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
@@ -161,11 +162,18 @@
     <string name="item">item</string>
     <string name="delete_items">delete items</string>
     <string name="failed">Failed</string>
-    <string name="address_req">يجب اضافه عنوانك اولا</string>
+    <string name="address_req">You Should add Your Address First </string>
     <string name="notifications">Notifications</string>
     <string name="si_su">Please Sign in or sign up .</string>
     <string name="products_cost">Products Cost</string>
     <string name="discount">DisCount</string>
     <string name="total">Total</string>
-    <string name="search">ابحث</string>
+    <string name="search">Search</string>
+    <string name="skip">Skip</string>
+    <string name="go_cart">
+You have sent your order to the basket. Go to the basket to complete your order and take advantage of the offer</string>
+    <string name="mainmenu">Main Menu</string>
+    <string name="Menu">Menu</string>
+    <string name="offer">Offer</string>
+    <string name="Sales">Sales</string>
 </resources>

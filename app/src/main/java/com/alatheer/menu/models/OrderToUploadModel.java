@@ -12,12 +12,21 @@ public class OrderToUploadModel implements Serializable {
     private String products_cost;
     private String totale;
     private String type;
+    private String token;
+    private int deliver_by;
 
     private double order_total_price;
 
 
     private List<productitemModel> orderItemList;
 
+    public void setDeliver_by(int deliver_by) {
+        this.deliver_by = deliver_by;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public void setType(String type) {
         this.type = type;

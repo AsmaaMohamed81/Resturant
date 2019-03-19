@@ -3,12 +3,14 @@ package com.alatheer.menu.adapters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alatheer.menu.R;
 import com.alatheer.menu.activities.DetailsFoodActivity;
@@ -23,12 +25,13 @@ public class DetailsIngredientAdapter extends RecyclerView.Adapter<DetailsIngred
 
     private List<IngredientsModel> list;
 
-    public static double all;
+    public  double all;
 
     DetailsFoodActivity detailsFoodActivity;
 
     private   ArrayList<String> ingIDlist;
     private   ArrayList<String> ingIDlistname;
+    private String TAG="adpter";
 
 
     public ArrayList<String> getIngIDlist() {
@@ -72,6 +75,8 @@ public class DetailsIngredientAdapter extends RecyclerView.Adapter<DetailsIngred
 
         double pric =  Double.parseDouble(pri);
 
+        Log.d(TAG, "onBindViewHolder: pric "+pric);
+
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -81,11 +86,14 @@ public class DetailsIngredientAdapter extends RecyclerView.Adapter<DetailsIngred
 
                     ingredientsModel.setSelected(true);
 
+                    Log.d(TAG, "onCheckedChanged: all"+all);
                     all += pric;
 
 
                     ingIDlist.add(iD);
                     ingIDlistname.add(name);
+
+                    Log.d(TAG, "onCheckedChanged: "+all);
 
 
                 } else {
@@ -97,6 +105,9 @@ public class DetailsIngredientAdapter extends RecyclerView.Adapter<DetailsIngred
 
                 }
 
+                detailsFoodActivity.ingredientPos(all, ingIDlist);
+
+
 //                Toast.makeText(DetailsIngredientAdapter.this.context,
 //                        "all  =  " + all,
 //                        Toast.LENGTH_LONG).show();
@@ -104,7 +115,6 @@ public class DetailsIngredientAdapter extends RecyclerView.Adapter<DetailsIngred
 
 
 
-                detailsFoodActivity.ingredientPos(all, ingIDlist);
 
             }
         });

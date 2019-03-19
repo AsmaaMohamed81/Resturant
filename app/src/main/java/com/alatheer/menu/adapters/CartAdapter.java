@@ -67,7 +67,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyHolder> {
                 holder.image_increment.clearAnimation();
                 holder.image_decrement.clearAnimation();
                 holder.image_increment.startAnimation(animation);
-                double counter = Double.parseDouble(holder.tv_counter.getText().toString().trim()) + 1;
+                Integer counter = Integer.parseInt(holder.tv_counter.getText().toString().trim()) + 1;
                 holder.tv_counter.setText(String.valueOf(counter));
 
 
@@ -85,7 +85,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyHolder> {
                 holder.image_increment.clearAnimation();
                 holder.image_decrement.startAnimation(animation);
 
-                double counter = Double.parseDouble(holder.tv_counter.getText().toString().trim()) - 1;
+                Integer counter = Integer.parseInt(holder.tv_counter.getText().toString().trim()) - 1;
+
                 if (counter < 1) {
                     counter = 1;
                 }
@@ -138,7 +139,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyHolder> {
 
 
 
-            tv_counter.setText(String.valueOf(productitemModel.getCount()));
+            String count =String.valueOf(productitemModel.getCount());
+            Double doublcount=Double.parseDouble(count);
+            int intcount=doublcount.intValue();
+            tv_counter.setText(String.valueOf(intcount));
 
             double price = Double.parseDouble(productitemModel.getCount()) * Double.parseDouble(productitemModel.getPrice());
             tv_price.setText(String.valueOf(price));

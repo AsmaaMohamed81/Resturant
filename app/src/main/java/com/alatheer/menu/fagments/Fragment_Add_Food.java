@@ -2,6 +2,7 @@ package com.alatheer.menu.fagments;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -28,12 +29,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.alatheer.menu.R;
+import com.alatheer.menu.languagehelper.LanguageHelper;
+import com.alatheer.menu.tags.Tags;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+
+import io.paperdb.Paper;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by elashry on 08/10/2018.
@@ -57,6 +64,27 @@ public class Fragment_Add_Food extends Fragment {
     private final int img_req =126;
     private Bitmap bitmap=null;
     private Uri uri = null;
+
+    @Override
+    public void onAttach(Context context) {
+
+        Paper.init(context);
+        String lang = Paper.book().read("language");
+
+        if (Paper.book().read("language").equals("ar")) {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.AR_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+
+        } else {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.EN_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+        }
+        super.onAttach(CalligraphyContextWrapper.wrap(LanguageHelper.onAttach(context, lang)));
+    }
 
     @Nullable
     @Override

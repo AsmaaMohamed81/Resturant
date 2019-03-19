@@ -13,7 +13,9 @@ import android.widget.LinearLayout;
 
 import com.alatheer.menu.R;
 import com.alatheer.menu.languagehelper.LanguageHelper;
+import com.alatheer.menu.models.UserModel;
 import com.alatheer.menu.preferences.Preferences;
+import com.alatheer.menu.singletone.UserSingleTone;
 import com.alatheer.menu.tags.Tags;
 
 import io.paperdb.Paper;
@@ -23,6 +25,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class SplashActivity extends AppCompatActivity {
     private LinearLayout ll;
     private Preferences preferences;
+    private UserModel userModel;
+    private UserSingleTone userSingleTone;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -62,6 +66,9 @@ public class SplashActivity extends AppCompatActivity {
 
 
         preferences =Preferences.getInstance();
+
+
+        userSingleTone = UserSingleTone.getInstance();
         ll = findViewById(R.id.ll);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.slide_down);
         new Handler().postDelayed(new Runnable() {
@@ -84,8 +91,17 @@ public class SplashActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if (preferences.isFirstTime(SplashActivity.this))
-                        {
+
+                        String session = preferences.getSession(SplashActivity.this);
+
+                        Log.e("Session",session);
+
+
+                        if (session.equals(Tags.session_login)) {
+                            userModel = preferences.getUserModel(SplashActivity.this);
+                            userSingleTone.setUserModel(userModel);
+
+
                             if (preferences.isChooseLang(SplashActivity.this))
                             {
                                 if (preferences.iCITYData(SplashActivity.this)) {
@@ -108,12 +124,33 @@ public class SplashActivity extends AppCompatActivity {
                                 finish();
                             }
 
-                        }else
-                        {
-                            Intent intent = new Intent(SplashActivity.this,HomeActivity.class);
-                            startActivity(intent);
-                            finish();
                         }
+                        else {
+
+                            if (preferences.isChooseLang(SplashActivity.this))
+                            {
+                                if (preferences.iCITYData(SplashActivity.this)) {
+                                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                    finish();
+
+                                }else {
+                                    Intent intent = new Intent(SplashActivity.this,ChooseLocationActivity.class);
+                                    startActivity(intent);
+                                    finish();
+
+                                }
+
+
+                            }else
+                            {
+                                Intent intent = new Intent(SplashActivity.this,CountryLanguageActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+
+
 
 
                     }

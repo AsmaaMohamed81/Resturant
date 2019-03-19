@@ -8,9 +8,10 @@
     android:padding="10dp">
 
     <TextView
+        android:id="@+id/rest_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:text="مطعم السعاده "
         android:textStyle="bold"
         android:textColor="@color/colorAccent"
@@ -28,7 +29,7 @@
         android:id="@+id/card_bill"
         android:layout_below="@id/recView"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="150dp"
         android:layout_marginTop="10dp"
         app:cardElevation="3dp"
         android:layout_marginLeft="15dp"
@@ -43,6 +44,7 @@
         android:orientation="vertical"
         >
         <LinearLayout
+            android:id="@+id/ll_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -74,6 +76,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_discount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -109,9 +112,11 @@
             android:layout_marginTop="20dp"
             />
         <LinearLayout
+            android:id="@+id/ll_after_price"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal"
             android:weightSum="3"
 

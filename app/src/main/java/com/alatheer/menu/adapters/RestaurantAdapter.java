@@ -1,5 +1,6 @@
 package com.alatheer.menu.adapters;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,8 @@ import com.alatheer.menu.fagments.Fragment_Home_Restaurants;
 import com.alatheer.menu.models.RestaurantsModel;
 import com.alatheer.menu.tags.Tags;
 import com.github.siyamed.shapeimageview.RoundedImageView;
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -65,7 +68,11 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Ho
 
     public class Holder extends RecyclerView.ViewHolder{
         RoundedImageView img;
-        TextView txt_product_name,txt_main,txt_details;
+        TextView txt_product_name,txt_main,txt_details,txt_time;
+        ShimmerTextView  shimmertext;
+       Shimmer shimmer = new Shimmer();
+
+
 
         public Holder(View itemView) {
             super(itemView);
@@ -73,6 +80,8 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Ho
             img=itemView.findViewById(R.id.img);
             txt_product_name=itemView.findViewById(R.id.txt_product_name);
             txt_details=itemView.findViewById(R.id.txt_details);
+            txt_time=itemView.findViewById(R.id.txt_time);
+            shimmertext=itemView.findViewById(R.id.shimmer);
 
         }
 
@@ -82,6 +91,28 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Ho
             Picasso.with(context).load(Tags.image_url+restaurants.getRest_logo()).into(img);
             txt_product_name.setText(restaurants.getRest_name());
             txt_details.setText(restaurants.getRest_address());
+
+            if (restaurants.getRest_work_time()!=null) {
+                txt_time.setText("مواعيد العمل من " + restaurants.getRest_work_time());
+            }
+
+
+            if (restaurants.getRest_discount()==null){
+
+                shimmertext.setVisibility(View.GONE);
+
+            }
+
+            shimmer.start(shimmertext);
+
+            shimmer.setRepeatCount(1000)
+                    .setDuration(500)
+                    .setStartDelay(1000)
+                    .setDirection(Shimmer.ANIMATION_DIRECTION_RTL);
+
+
+
+            shimmertext.setText(" خصم "+restaurants.getRest_discount()+" % ");
 
 
         }

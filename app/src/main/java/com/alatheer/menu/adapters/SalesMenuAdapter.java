@@ -63,7 +63,7 @@ public class SalesMenuAdapter extends RecyclerView.Adapter<SalesMenuAdapter.Hold
 
     public class Holder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView name, amount;
+        TextView name, amount,txt_time;
 
         public Holder(View itemView) {
             super(itemView);
@@ -71,13 +71,20 @@ public class SalesMenuAdapter extends RecyclerView.Adapter<SalesMenuAdapter.Hold
             imageView = itemView.findViewById(R.id.image);
             name = itemView.findViewById(R.id.txt_name);
             amount = itemView.findViewById(R.id.txt_price);
+            txt_time=itemView.findViewById(R.id.txt_time);
         }
 
         public void Bind(RestaurantMenuModel restaurantMenuModel) {
 
             Picasso.with(context).load(Tags.image_url + restaurantMenuModel.getImg()).into(imageView);
-            name.setText(restaurantMenuModel.getProduct_name()+"Number");
-            amount.setText(restaurantMenuModel.getMostSale());
+            name.setText(restaurantMenuModel.getProduct_name());
+            amount.setText(restaurantMenuModel.getMostSale()+" Num");
+
+            if (restaurantMenuModel.getProduct_time()!=null){
+
+                txt_time.setText("وقت تنفيذ الوجبة : " + restaurantMenuModel.getProduct_time());
+
+            }
         }
     }
 }

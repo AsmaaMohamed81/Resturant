@@ -5,7 +5,7 @@ package com.alatheer.menu.tags;
  */
 
 public class Tags {
-    public static final String AR_FONT_NAME= "fonts/ar_font.otf";
+    public static final String AR_FONT_NAME= "fonts/ggg.otf";
     public static final String EN_FONT_NAME= "fonts/en_oswalid.ttf";
     public static final String session_login= "login";
     public static final String session_logout= "logout";

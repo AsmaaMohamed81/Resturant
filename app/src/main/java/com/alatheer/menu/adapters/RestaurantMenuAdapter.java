@@ -62,7 +62,7 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
 
     public class MyHolder extends RecyclerView.ViewHolder{
         private RoundedImageView imageView;
-        private TextView name,price;
+        private TextView name,txt_time;
         public LinearLayout ll_foreground;
 
         public MyHolder(View itemView) {
@@ -70,7 +70,7 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
 
             imageView=itemView.findViewById(R.id.image);
             name=itemView.findViewById(R.id.txt_name);
-            price=itemView.findViewById(R.id.txt_price);
+            txt_time=itemView.findViewById(R.id.txt_time);
         }
 
         public void Bind (RestaurantMenuModel restaurantMenuModel){
@@ -78,6 +78,12 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
             Picasso.with(context).load(Tags.image_url+restaurantMenuModel.getImg()).into(imageView);
             name.setText(restaurantMenuModel.getProduct_name());
 //            price.setText(restaurantMenuModel.getPrice());
+
+            if (restaurantMenuModel.getProduct_time()!=null){
+
+                txt_time.setText("وقت تنفيذ الوجبة : " + restaurantMenuModel.getProduct_time());
+
+            }
         }
     }
 }

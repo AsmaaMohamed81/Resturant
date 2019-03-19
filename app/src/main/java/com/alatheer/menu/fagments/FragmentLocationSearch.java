@@ -32,9 +32,11 @@ import android.widget.Toast;
 import com.alatheer.menu.R;
 import com.alatheer.menu.activities.MapActivity;
 import com.alatheer.menu.common.Common;
+import com.alatheer.menu.languagehelper.LanguageHelper;
 import com.alatheer.menu.models.LocationModel;
 import com.alatheer.menu.preferences.Preferences;
 import com.alatheer.menu.service.LocationService;
+import com.alatheer.menu.tags.Tags;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
@@ -44,6 +46,10 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+
+import io.paperdb.Paper;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by elashry on 30/09/2018.
@@ -64,6 +70,29 @@ public class FragmentLocationSearch extends Fragment {
     private Intent intentService;
     private ProgressDialog dialog;
     private Preferences preferences;
+
+
+
+    @Override
+    public void onAttach(Context context) {
+
+        Paper.init(context);
+        String lang = Paper.book().read("language");
+
+        if (Paper.book().read("language").equals("ar")) {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.AR_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+
+        } else {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.EN_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+        }
+        super.onAttach(CalligraphyContextWrapper.wrap(LanguageHelper.onAttach(context, lang)));
+    }
 
 
     public static FragmentLocationSearch getInstance()

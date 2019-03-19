@@ -16,4 +16,12 @@
 
     <color name="grayyy">#F3F1F1</color>
 
+    <color name="gradient_start_color">#C45252</color>
+    <color name="gradient_center_color">#C4854F</color>
+    <color name="gradient_end_color">#CCA532</color>
+
+    <color name="green">#267E1F</color>
+
+
+
 </resources>

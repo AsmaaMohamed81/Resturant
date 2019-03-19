@@ -69,20 +69,27 @@ public class OfferMenuAdapter extends RecyclerView.Adapter<OfferMenuAdapter.MyHo
     public class MyHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
-        TextView name,discount;
+        TextView name,discount,txt_time;
         public MyHolder(View itemView) {
             super(itemView);
 
             imageView=itemView.findViewById(R.id.image);
             name=itemView.findViewById(R.id.txt_name);
             discount=itemView.findViewById(R.id.txt_price);
+            txt_time=itemView.findViewById(R.id.txt_time);
         }
 
         public void Bind(RestaurantMenuModel restaurantMenuModel) {
 
             Picasso.with(context).load(Tags.image_url+restaurantMenuModel.getImg()).into(imageView);
             name.setText(restaurantMenuModel.getProduct_name());
-            discount.setText(restaurantMenuModel.getDiscount()+ "%");
+            discount.setText(restaurantMenuModel.getDiscount()+ " %");
+
+            if (restaurantMenuModel.getProduct_time()!=null){
+
+                txt_time.setText("وقت تنفيذ الوجبة : " + restaurantMenuModel.getProduct_time());
+
+            }
 
 
 

@@ -1,5 +1,6 @@
 package com.alatheer.menu.fagments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -20,17 +21,22 @@ import android.widget.Toast;
 import com.alatheer.menu.R;
 import com.alatheer.menu.activities.RestaurantMainMenuActivity;
 import com.alatheer.menu.adapters.ChifAdapter;
+import com.alatheer.menu.languagehelper.LanguageHelper;
 import com.alatheer.menu.models.Restaurantdata;
 import com.alatheer.menu.models.RestaurantsModel;
 import com.alatheer.menu.preferences.Preferences;
 import com.alatheer.menu.remote.Api;
 import com.alatheer.menu.singletone.RestSingleTone;
+import com.alatheer.menu.tags.Tags;
 
 import java.util.ArrayList;
 
+import io.paperdb.Paper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by elashry on 28/08/2018.
@@ -47,18 +53,39 @@ public class Fragment_Chif extends Fragment {
     private TextView txt_no;
     private RestSingleTone restSingleTone;
 
+    @Override
+    public void onAttach(Context context) {
+
+        Paper.init(context);
+        String lang = Paper.book().read("language");
+
+        if (Paper.book().read("language").equals("ar")) {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.AR_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+
+        } else {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.EN_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+        }
+        super.onAttach(CalligraphyContextWrapper.wrap(LanguageHelper.onAttach(context, lang)));
+    }
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        Toast.makeText(getActivity(), "fragment_chif", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "fragment_chif", Toast.LENGTH_SHORT).show();
         if (getArguments() != null) {
 
             city_id = getArguments().getString("id_city");
             Log.e("id_cityiiiiii", city_id + "");
-            Toast.makeText(getActivity(), ""+city_id, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), ""+city_id, Toast.LENGTH_SHORT).show();
 
 
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,6 +22,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -58,6 +62,10 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import io.paperdb.Paper;
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -88,10 +96,11 @@ public class HomeActivity extends AppCompatActivity
     private UserSingleTone userSingleTone;
     private UserModel userModel, userModel2;
     private Preferences preferences;
-    private Button search,fake;
+    private Button search, fake;
 
     private String qeuryy, numberorder;
     String id = null;
+    private String name_city;
 
 
     @Override
@@ -125,9 +134,16 @@ public class HomeActivity extends AppCompatActivity
         Paper.init(this);
         LanguageHelper.onAttach(this, Paper.book().read("language"));
 
+        if (isFirstTime()) {
+            ShowIntro("لكتابه اسم المطعم ", Html.fromHtml("<font color='red'> يمكنك الاستمتاع بميزه البحث عن مطعمك المفضل ثم الضغط علي كلمه ابحث</p>"), R.id.edt_search, 1);
+        }
+
         preferences = Preferences.getInstance();
 
+
         id_city = preferences.getCITYData(this).getCityIdPk();
+        name_city = preferences.getCITYData(this).getCityName();
+
         name_country = preferences.getCountry_Nationality(this).getCountryName();
         img_country = preferences.getCountry_Nationality(this).getCountryFlag();
 //        id_city = getIntent().getStringExtra("id_city");
@@ -142,6 +158,8 @@ public class HomeActivity extends AppCompatActivity
     private void initView() {
 
 
+        Log.d("Token", "onClick: " + FirebaseInstanceId.getInstance().getToken());
+
         userSingleTone = userSingleTone.getInstance();
 
 
@@ -155,7 +173,11 @@ public class HomeActivity extends AppCompatActivity
         }
 
 //        Toast.makeText(this, "getUser_id : "+userSingleTone.getRestModel().getUser_id(), Toast.LENGTH_SHORT).show();
-        userModel = preferences.getUserModel(this);
+
+
+        userModel = userSingleTone.getUserModel();
+
+
         fragmentManager = getSupportFragmentManager();
         ////////////////////////////////////////////////////////
         tv_not_budget = findViewById(R.id.tv_not_budget);
@@ -164,8 +186,11 @@ public class HomeActivity extends AppCompatActivity
         root = findViewById(R.id.root);
         img_sheet_close = findViewById(R.id.img_close);
         tv_title = findViewById(R.id.tv_title);
+
+        tv_title.setText(name_city);
+
+
         ll_loc = findViewById(R.id.ll_loc);
-        fake=findViewById(R.id.fake);
 
         behavior = BottomSheetBehavior.from(root);
 
@@ -286,17 +311,22 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                Fragment_Chif fragment_chif = Fragment_Chif.getInstance();
 
-                Bundle bundle = new Bundle();
-                bundle.putString("id_city", id_city);
-                fragment_chif.setArguments(bundle);
+                if (isFirstTime()) {
+
+                } else {
+                    Fragment_Chif fragment_chif = Fragment_Chif.getInstance();
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("id_city", id_city);
+                    fragment_chif.setArguments(bundle);
 
 
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.frame, fragment_chif)
-                        .commit();
-                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.frame, fragment_chif)
+                            .commit();
+                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }
 
 
             }
@@ -326,27 +356,34 @@ public class HomeActivity extends AppCompatActivity
             public void onClick(View v) {
 
 
-                if (fragmentManager.findFragmentByTag("fragment_home") != null && fragmentManager.findFragmentByTag("fragment_home").isVisible()) {
+//                if (fragmentManager.findFragmentByTag("fragment_home") != null && fragmentManager.findFragmentByTag("fragment_home").isVisible()) {
+//
+//                    AddFragmentLocation();
+//                    fab.setVisibility(View.GONE);
+//
+//
+//                } else if (fragmentManager.findFragmentByTag("fragment_filter") != null && fragmentManager.findFragmentByTag("fragment_filter").isVisible()) {
+//                    fragmentManager.popBackStack();
+//                    flag = false;
+//                    img_filter.setImageResource(R.drawable.filter);
+//                    AddFragmentLocation();
+//
+//
+//                } else {
+//
+//
+//                    AddFragmentHome();
+//                    setFabAnim();
+//
+//
+//                }
 
-                    AddFragmentLocation();
-                    fab.setVisibility(View.GONE);
+
+                Intent intent = new Intent(HomeActivity.this, CountryLanguageActivity.class);
+                startActivity(intent);
+                finish();
 
 
-                } else if (fragmentManager.findFragmentByTag("fragment_filter") != null && fragmentManager.findFragmentByTag("fragment_filter").isVisible()) {
-                    fragmentManager.popBackStack();
-                    flag = false;
-                    img_filter.setImageResource(R.drawable.filter);
-                    AddFragmentLocation();
-
-
-                } else {
-
-
-                    AddFragmentHome();
-                    setFabAnim();
-
-
-                }
             }
         });
 
@@ -367,12 +404,12 @@ public class HomeActivity extends AppCompatActivity
         setFabAnim();
 
 /////////////////////////////////////////////
-        fake.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Token", "onClick: "+ FirebaseInstanceId.getInstance().getToken());
-            }
-        });
+//        fake.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("Token", "onClick: "+ FirebaseInstanceId.getInstance().getToken());
+//            }
+//        });
 
 
     }
@@ -812,6 +849,54 @@ public class HomeActivity extends AppCompatActivity
         for (Fragment fragment : fragmentList) {
             fragment.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+    }
+
+
+    private void ShowIntro(String title, Spanned text, int viewId, final int type) {
+
+        new GuideView.Builder(this)
+                .setTitle(title)
+                .setTargetView(findViewById(viewId))
+                .setContentTextSize(15)//optional
+                .setTitleTextSize(20)//optional
+                .setContentSpan((Spannable) text)
+                .setGravity(Gravity.center)
+                .setIndicatorHeight(30)
+                .setDismissType(DismissType.anywhere) //optional - default dismissible by TargetView
+                .setGuideListener(new GuideListener() {
+                    @Override
+                    public void onDismiss(View view) {
+                        if (type == 1) {
+                            ShowIntro("زر ابحث", Html.fromHtml("<font color='red'>اضغط علي كلمه ابحث للبحث عن مطعمك </p>"), R.id.btn_search, 6);
+                        } else if (type == 6) {
+                            ShowIntro("زر الشيفات", Html.fromHtml("<font color='red'>للبحث عن الاكل البيتي في مدينتك </p>"), R.id.fab, 2);
+                        } else if (type == 2) {
+                            ShowIntro("القائمه الجانبيه لتسهيل الوصول ", Html.fromHtml("<font color='red'>اسحب القائمه الجانبيه للاستمتاع بميزات اخري </p>"), R.id.toolbar, 4);
+                        } else if (type == 4) {
+                            ShowIntro("مدينتك", Html.fromHtml("<font color='red'>هذه هي المدينه التي قمت بختيارها والتي يوجد بيها هذه المطاعم بالضغط عليها يمكنك تغيرها </p>"), R.id.ll_loc, 3);
+//                        } else if (type == 3) {
+//                            ShowIntro("المطاعم", Html.fromHtml("<font color='red'>قم بختيار اي من المطاعم لمشاهده قائمه الطعام والتمتع بالعرض </p>"), R.id.fragment_home_container, 5);
+//
+//                        }
+                        } else if (type == 3) {
+                            return;
+                        }
+                    }
+                })
+                .build()
+                .show();
+    }
+
+    private boolean isFirstTime() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        boolean ranBefore = preferences.getBoolean("RanBefore", false);
+        if (!ranBefore) {
+            // first time
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("RanBefore", true);
+            editor.commit();
+        }
+        return !ranBefore;
     }
 
 

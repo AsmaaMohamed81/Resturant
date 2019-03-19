@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
     private LinearLayout new_account;
     private EditText edt_Phone, edt_password;
     private TextInputLayout email_container, password_container;
-    private TextView tv_forget_password;
+    private TextView tv_forget_password,skip;
     private Button login_btn;
     private ProgressDialog dialog;
     private AlertDialog alertDialog;
@@ -93,6 +94,9 @@ public class LoginActivity extends AppCompatActivity {
         password_container = findViewById(R.id.password_container);
         tv_forget_password = findViewById(R.id.tv_forgetPassword);
         login_btn = findViewById(R.id.login_btn);
+        skip=findViewById(R.id.skip);
+
+        skip.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.press_anim);
 
@@ -136,6 +140,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CheckData();
+            }
+        });
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -216,7 +229,7 @@ public class LoginActivity extends AppCompatActivity {
                                 userSingleTone.setUserModel(userModel);
                                 preferences.Create_Update_UserData(LoginActivity.this, userModel);
 
-                                Log.d("loggggg",userSingleTone.getUserModel().getUser_id());
+                                Log.d("loggggg",preferences.getUserModel(LoginActivity.this).getUser_id());
 
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(intent);

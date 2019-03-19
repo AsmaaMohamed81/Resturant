@@ -2,7 +2,7 @@
 <resources>
     <string name="map_api">AIzaSyBfL8E89HdeMD6E2fvR76i_kD10wiTIKIc</string>
     <string name="app_name">منيوو</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_home">الصفحه الرئيسيه</string>
 
     <string name="navigation_drawer_open">فتح</string>
     <string name="navigation_drawer_close">إغلاق</string>
@@ -108,8 +108,8 @@
     <string name="annual_report">تقرير سنوي</string>
     <string name="log_out">تسجيل الخروج</string>
     <string name="chef_search">إبحث عن شيف</string>
-    <string name="something">Error : something went haywire try again later</string>
-    <string name="em_ph_exist">Email or phone number are exist</string>
+    <string name="something">خطأ : يوجد خطأ ما بالنسبه للانترنت او الموقع الرسمي</string>
+    <string name="em_ph_exist">اي من ايميلك او اسمك متواجدين من قبل</string>
 
     <string-array name="details">
         <item>العروض</item>
@@ -138,7 +138,7 @@
 
     </string-array>
 
-    <string name="chk_user_pas">Check username or password</string>
+    <string name="chk_user_pas">افحص اميلك او اسمك متواجدين من قبل </string>
     <string name="No_offer">لايوجد عروض الان</string>
     <string name="info">مثال : حساسيه , الصلصه علي الجنب , بدون بصل , الخ . \الرجاء ان تكون واضح ودقيق حتي نتمكن من تنفيذ طلبك علي أكمل وجه !</string>
     <string name="No_menu">لايوجد قائمه طعام</string>
@@ -148,23 +148,29 @@
     <string name="add_to_card">أضف الي السلة</string>
     <string name="add_city">أدخل المدينه</string>
     <string name="add_govern">أدخل المحافظه</string>
-    <string name="continuee">continue</string>
-    <string name="personal_information">Personal Information</string>
-    <string name="address">Address</string>
+    <string name="continuee">استمر</string>
+    <string name="personal_information">معلوماتك الشخصيه</string>
+    <string name="address">العنوان</string>
     <string name="address_add">اضف عنوانك بالتفصيل</string>
-    <string name="empty_cart">Empty Cart</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete">Delete</string>
-    <string name="the_cart_contains">The cart contains</string>
-    <string name="item">item</string>
-    <string name="delete_items">delete items</string>
-    <string name="failed">Failed</string>
+    <string name="empty_cart">السله فارغه</string>
+    <string name="cancel">الغاء</string>
+    <string name="delete">حذف</string>
+    <string name="the_cart_contains">محتوي السله</string>
+    <string name="item">عنصر</string>
+    <string name="delete_items">حذف العنصر</string>
+    <string name="failed">لم يكتمل</string>
     <string name="address_req">يجب اضافه عنوانك اولا</string>
-    <string name="notifications">Notifications</string>
-    <string name="si_su">Please Sign in or sign up .</string>
-    <string name="products_cost">Products Cost</string>
-    <string name="discount">DisCount</string>
-    <string name="total">Total</string>
+    <string name="notifications">اشعارات</string>
+    <string name="si_su">من فضلك قوم بتسجيل الدخول اولا</string>
+    <string name="products_cost">تكلفه الوجبات</string>
+    <string name="discount">نسبه الخصم</string>
+    <string name="total">المجموع</string>
     <string name="search">ابحث</string>
+    <string name="skip">تخطي</string>
+    <string name="go_cart">لقد ارسلت طلبك للسله اذهب للسله لاكمال طلبك والاستفاده من العرض</string>
+    <string name="mainmenu">القائمه الرئيسيه</string>
+    <string name="Menu">القائمه</string>
+    <string name="offer">العروض</string>
+    <string name="Sales">الاكثر مبيعا</string>
 
 </resources>

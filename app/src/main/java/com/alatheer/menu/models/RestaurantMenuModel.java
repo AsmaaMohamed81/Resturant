@@ -21,12 +21,22 @@ public class RestaurantMenuModel implements Serializable {
     private String to_date;
     private String mostSale;
     private String offer_name;
+    private String product_time;
+
 
 
     public RestaurantMenuModel(String product_name, String img, String discount) {
         this.product_name = product_name;
         this.img = img;
         this.discount = discount;
+    }
+
+    public String getProduct_time() {
+        return product_time;
+    }
+
+    public void setProduct_time(String product_time) {
+        this.product_time = product_time;
     }
 
     public String getMostSale() {

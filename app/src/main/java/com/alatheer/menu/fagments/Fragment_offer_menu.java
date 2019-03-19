@@ -1,5 +1,6 @@
 package com.alatheer.menu.fagments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -18,15 +19,20 @@ import android.widget.TextView;
 import com.alatheer.menu.R;
 import com.alatheer.menu.activities.DetailsFoodActivity;
 import com.alatheer.menu.adapters.OfferMenuAdapter;
+import com.alatheer.menu.languagehelper.LanguageHelper;
 import com.alatheer.menu.models.RestaurantMenuModel;
 import com.alatheer.menu.remote.Api;
+import com.alatheer.menu.tags.Tags;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import io.paperdb.Paper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Fragment_offer_menu extends Fragment {
     private List<RestaurantMenuModel> listoffer;
@@ -34,10 +40,33 @@ public class Fragment_offer_menu extends Fragment {
     private RecyclerView recyclerView;
 
     private OfferMenuAdapter offerMenuAdapter;
-    private String mainId,restiD,rest_discount;
+    private String mainId,restiD,rest_discount,restname;
 
     private ProgressBar progressBar;
     private TextView tv_no;
+
+
+    @Override
+    public void onAttach(Context context) {
+
+        Paper.init(context);
+        String lang = Paper.book().read("language");
+
+        if (Paper.book().read("language").equals("ar")) {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.AR_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+
+        } else {
+            CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                    .setDefaultFontPath(Tags.EN_FONT_NAME)
+                    .setFontAttrId(R.attr.fontPath)
+                    .build());
+        }
+        super.onAttach(CalligraphyContextWrapper.wrap(LanguageHelper.onAttach(context, lang)));
+    }
+
 
     @Nullable
     @Override
@@ -49,6 +78,7 @@ public class Fragment_offer_menu extends Fragment {
 
             mainId=getArguments().getString("mainid");
             restiD=getArguments().getString("restiD");
+            restname=getArguments().getString("restname");
             rest_discount=getArguments().getString("rest_discount");
 
             Log.e("mainID_offer",mainId);
@@ -84,7 +114,7 @@ public class Fragment_offer_menu extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setNestedScrollingEnabled(true);
 
         offerMenuAdapter=new OfferMenuAdapter(getActivity(),listoffer,this);
         recyclerView.setAdapter(offerMenuAdapter);
@@ -139,6 +169,7 @@ public class Fragment_offer_menu extends Fragment {
         intent.putExtra("product_details",restaurantMenuModel.getDetails());
         intent.putExtra("product_img",restaurantMenuModel.getImg());
         intent.putExtra("restiD",restiD);
+        intent.putExtra("restname", restname);
         intent.putExtra("rest_discount",rest_discount);
 
 
