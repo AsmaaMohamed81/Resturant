@@ -70,9 +70,16 @@ public interface Services {
     @GET("Api/getProductIngredients/{subProductId}")
     Call<List<IngredientsModel>> getIngredients(@Path("subProductId") String subProductId);
 
+
+
+
+
+
     @FormUrlEncoded
     @POST("Api/searchByName")
     Call<Restaurantdata> getSearchRestaurant (@Field("partName") String partName);
+
+
 
 
 
