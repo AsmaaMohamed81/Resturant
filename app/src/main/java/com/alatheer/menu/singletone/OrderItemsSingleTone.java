@@ -29,10 +29,7 @@ public class OrderItemsSingleTone {
         if (pos !=-1)
         {
             productitemModel item = orderItemList.get(pos);
-//            int product_new_quantity = orderItem.getProduct_quantity() + item.getProduct_quantity();
-//            item.setProduct_quantity(product_new_quantity);
-//            double product_total_price = item.getProduct_price() * product_new_quantity;
-//            item.setProduct_total_price(product_total_price);
+
             orderItemList.set(pos,item);
 
         }else
