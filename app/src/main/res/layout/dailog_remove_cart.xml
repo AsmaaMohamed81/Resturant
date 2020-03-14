@@ -129,7 +129,7 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/close_x"
+                    android:src="@drawable/close_icon"
                     android:padding="6dp"
                     android:clickable="false"
                     android:longClickable="false"

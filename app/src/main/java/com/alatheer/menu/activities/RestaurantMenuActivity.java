@@ -194,7 +194,7 @@ public class RestaurantMenuActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_layout, getResources().getStringArray(R.array.details));
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_row, getResources().getStringArray(R.array.details));
 
 
         img_cart.setOnClickListener(new View.OnClickListener() {

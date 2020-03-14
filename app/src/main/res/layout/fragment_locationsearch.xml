@@ -41,7 +41,7 @@
                 android:id="@+id/image_delete_search_txt"
                 android:layout_width="0dp"
                 android:layout_weight=".15"
-                android:src="@drawable/close_x"
+                android:src="@drawable/close_icon"
                 android:padding="18dp"
                 android:layout_height="match_parent"
                 android:visibility="invisible"
